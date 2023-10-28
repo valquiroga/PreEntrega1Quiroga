@@ -1,18 +1,27 @@
 import CartWidget from "../CartWidget/CartWidget"
 import Button from "../Button/Button"
+import { Link, NavLink, Navigate } from "react-router-dom"
+
 const NavBar = () => {
+
     return (
-        <nav>
-        <h1>Agoriuk</h1>
+        <nav className="NavBar">
+   
+        <h1 onClick={() => navigate('/')}>Agoriuk</h1>
         <div>
-        <Button 
+            <NavLink to='/category/top' className={({isActive})=>isActive ? '': ''}>Tops</NavLink>
+            <NavLink to={`/category/bottom`} className={({isActive})=>isActive ? '':''}>Bottoms</NavLink>
+            <NavLink to={`/category/accesory`} className={({isActive})=>isActive ? '':''}>Accesories</NavLink>
+        {/* <Button 
         label= {'Tops'}  />
         <Button 
         label= {'Bottoms'}  />
         <Button 
-        label= {'Accesories'}  />
+        label= {'Accesories'}  /> */}
+
+        <div>
         <CartWidget />
-        
+        </div>
 </div>
 
 
